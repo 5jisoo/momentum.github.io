@@ -4,6 +4,10 @@ const todoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
+todoForm.classList.add("to-do-form");
+todoInput.classList.add("to-do-input");
+todoList.classList.add("to-do-list");
+
 let toDos = []; // 업데이트 되는 값이므로 let으로 변경해줌.
 
 const saveTodo = () => {
@@ -14,6 +18,7 @@ const deleteTodo = (event) => {
   const li = event.target.parentNode; // 삭제할 대상
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveTodo();
 };
 
 const paintTodo = (newTodo) => {
@@ -24,7 +29,7 @@ const paintTodo = (newTodo) => {
   span.innerText = newTodo.text;
 
   const button = document.createElement("button");
-  button.innerText = "✂️";
+  button.innerText = "✔";
   button.addEventListener("click", deleteTodo);
 
   li.appendChild(span);
@@ -50,7 +55,7 @@ todoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if (savedToDos) {
+if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos); // 기존에 가지고 있던 data
   toDos = parsedToDos; // 지금 화면에 보여지고 있는 todo에 restore.
   parsedToDos.forEach(paintTodo);

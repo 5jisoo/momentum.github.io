@@ -12,3 +12,5 @@ getClock(); // 웹사이트가 load 되자마자 실행되게 설정
 setInterval(getClock, 1000);
 
 "1".padStart();
+
+clock.classList.add("clock");

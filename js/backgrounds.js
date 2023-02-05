@@ -4,5 +4,5 @@ const chosenImage = images[Math.floor(Math.random() * images.length)];
 const bgImage = document.createElement("img"); // img 생성
 
 bgImage.src = `img/${chosenImage}`; // source 설정
-
+bgImage.classList.add("bgImage");
 document.body.appendChild(bgImage); // html에 추가

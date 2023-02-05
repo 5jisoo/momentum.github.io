@@ -1,11 +1,11 @@
 const quotes = [
   {
     quote:
-      "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "Any fool can write code that a computer can understand. \nGood programmers write code that humans can understand.",
     author: "Martin Fowler",
   },
   {
-    quote: "First, solve the problem. Then, write the code.",
+    quote: "First, solve the problem.\nThen, write the code.",
     author: "John Johnson",
   },
   {
@@ -22,16 +22,16 @@ const quotes = [
   },
   {
     quote:
-      "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.",
+      "Sometimes it pays to stay in bed on Monday, \nrather than spending the rest of the week debugging Monday’s code.",
     author: "Dan Salomon",
   },
   {
-    quote: "Code is like humor. When you have to explain it, it’s bad.",
+    quote: "Code is like humor. \nWhen you have to explain it, it’s bad.",
     author: "Cory House",
   },
   {
     quote:
-      "Optimism is an occupational hazard of programming: feedback is the treatment.",
+      "Optimism is an occupational hazard of programming: \nfeedback is the treatment.",
     author: "Kent Beck",
   },
   {
@@ -50,4 +50,6 @@ const author = document.querySelector("#quote span:last-child");
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todaysQuote.quote;
+quote.classList.add("quote");
 author.innerText = todaysQuote.author;
+author.classList.add("author");
